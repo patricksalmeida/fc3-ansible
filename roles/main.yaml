@@ -1,5 +1,15 @@
-- hosts: all
+# - hosts: all
+#   become: true
+#   roles:
+#     - install_nginx
+#     - install_docker
+
+- hosts: manager
   become: true
   roles:
-    # - install_nginx
-    - install_docker
+    - docker_swarm_manager
+
+- hosts: workers
+  become: true
+  roles:
+    - docker_swarm_workers
