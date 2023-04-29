@@ -7,6 +7,9 @@
       - curl
       - gnupg
       - lsb-release
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
     state: present
 
 - name: Install Docker GPG key
@@ -44,10 +47,10 @@
 #     name: docker
 #     state: present    
 
-# - name: Install jsondiff
-#   pip3:
-#     name: jsondiff
-#     state: present
+- name: Install jsondiff
+  pip:
+    name: jsondiff
+    state: present
 
 - name: Install docker-compose
   apt:

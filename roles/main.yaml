@@ -1,8 +1,8 @@
-# - hosts: all
-#   become: true
-#   roles:
-#     - install_nginx
-#     - install_docker
+- hosts: all
+  become: true
+  roles:
+    - install_nginx
+    - install_docker
 
 - hosts: manager
   become: true
@@ -13,3 +13,8 @@
   become: true
   roles:
     - docker_swarm_workers
+
+- hosts: manager
+  become: true
+  roles:
+    - deploy_stack
