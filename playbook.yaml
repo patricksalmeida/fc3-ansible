@@ -6,7 +6,7 @@
     - name: Install nginx
       apt:
         name: nginx
-        state: present # absent para disinstalar
+        state: present
         update_cache: yes
     
     - name: Start nginx

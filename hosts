@@ -4,5 +4,5 @@
 52.91.167.100
 
 [all:vars]
-ansible_ssh_private_key_file=./fullcycle.pem
+ansible_ssh_private_key_file=../fullcycle.pem
 ansible_user=ubuntu
