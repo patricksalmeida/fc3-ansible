@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: ubuntu
+  become: true
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present # absent para disinstalar
+        update_cache: yes
+    
+    - name: Start nginx
+      service:
+        name: nginx
+        state: restarted
