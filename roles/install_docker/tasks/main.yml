@@ -28,3 +28,29 @@
       - docker-buildx-plugin
       - docker-compose-plugin
     state: present
+
+# Alternativamente é possível instalar o docker-compose por meio do python
+# - name: Install docker-compose dependencies
+#   apt:
+#     name: 
+#       - python3-pip
+#       - virtualenv
+#       - python3-setuptools
+#     state: present
+#     update_cache: true
+
+# - name: Install python3 module for docker
+#   pip3:
+#     name: docker
+#     state: present    
+
+# - name: Install jsondiff
+#   pip3:
+#     name: jsondiff
+#     state: present
+
+- name: Install docker-compose
+  apt:
+    name: docker-compose
+    state: present
+
