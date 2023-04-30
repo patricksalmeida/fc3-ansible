@@ -1,7 +1,10 @@
 ---
-- name: Install nginx
+- name: Install nginx and npm
   apt:
-    name: nginx
+    name: 
+      - nginx
+      - nodejs
+      - npm
     state: present
     update_cache: yes
 
@@ -9,3 +12,19 @@
   service:
     name: nginx
     state: restarted
+
+- name: Create dir app
+  file:
+    path: /app
+    state: directory
+
+- name: Copy package.json
+  copy:
+    src: package.json
+    dest: /app/package.json
+
+- name: Install dependencies
+  npm:
+    path: /app
+    state: present
+
