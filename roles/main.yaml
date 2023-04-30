@@ -2,19 +2,19 @@
   become: true
   roles:
     - install_nginx
-    # - install_docker
+    - install_docker
 
-# - hosts: manager
-#   become: true
-#   roles:
-#     - docker_swarm_manager
+- hosts: manager
+  become: true
+  roles:
+    - docker_swarm_manager
 
-# - hosts: workers
-#   become: true
-#   roles:
-#     - docker_swarm_workers
+- hosts: workers
+  become: true
+  roles:
+    - docker_swarm_workers
 
-# - hosts: manager
-#   become: true
-#   roles:
-#     - deploy_stack
+- hosts: manager
+  become: true
+  roles:
+    - deploy_stack
